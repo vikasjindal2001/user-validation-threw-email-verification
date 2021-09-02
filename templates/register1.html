@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        .fluid-container{
+            box-sizing: border-box;
+            width: 40%;
+            border: 2px solid white;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 20px;
+            opacity: 92%;
+        }
+        .btn{
+            width: 30%;
+        }
+        .input{
+            width: 20px;
+            margin: 0px 0px;
+        }
+        body{
+            background-color: rgb(61, 59, 59);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        
+        {%if warning %}
+        <div class="alert alert-danger" role="alert">
+            {{warning}}
+          </div>
+          <br>
+        {%endif%}
+    </center>
+    <center>
+        <h2 style="color:white;font-family:Georgia, 'Times New Roman', Times, serif;margin-top:25px;">User Registration</h2>
+        <form action="register1/{{email}}" method="POST" class="form form-group">
+            {%csrf_token%}
+        <div class="fluid-container">
+            <br>
+                      
+            <div>
+                <input type="text" name="firstname" id="" required placeholder="First Name" class="form-control">
+            </div>
+            <br>
+            <div>
+                <input type="text" name="lastname" required id="" placeholder="Last Name" class="form-control">
+            </div>
+            <br>
+            <div>
+               <select name="gender" id="" class="form-control" required> 
+                <option value="-1">Gender</option>
+                   <option value="male">Male</option>
+                   <option value="female">Female</option>
+                   <option value="other">Other</option>
+               </select>
+            </div>
+            <br>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <select name="state" id="state" class="form-control" required>
+                        <option value="-1">--Select State--</option>
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                        <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option value="Assam">Assam</option>
+                        <option value="Bihar">Bihar</option>
+                        <option value="Chandigarh">Chandigarh</option>
+                        <option value="Chhattisgarh">Chhattisgarh</option>
+                        <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                        <option value="Daman and Diu">Daman and Diu</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Lakshadweep">Lakshadweep</option>
+                        <option value="Puducherry">Puducherry</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Gujarat">Gujarat</option>
+                        <option value="Haryana">Haryana</option>
+                        <option value="Himachal Pradesh">Himachal Pradesh</option>
+                        <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Madhya Pradesh">Madhya Pradesh</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Manipur">Manipur</option>
+                        <option value="Meghalaya">Meghalaya</option>
+                        <option value="Mizoram">Mizoram</option>
+                        <option value="Nagaland">Nagaland</option>
+                        <option value="Odisha">Odisha</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Rajasthan">Rajasthan</option>
+                        <option value="Sikkim">Sikkim</option>
+                        <option value="Tamil Nadu">Tamil Nadu</option>
+                        <option value="Telangana">Telangana</option>
+                        <option value="Tripura">Tripura</option>
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Uttarakhand">Uttarakhand</option>
+                        <option value="West Bengal">West Bengal</option>
+                        </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <input type="text" name="city" id="" class="form-control" required placeholder="City">
+                </div>
+
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <select name="countrycode" id="" class="form-control" required>
+                        <option value="+91">+91 (India)</option>
+                        <option value="+97">+97 (UnKnown)</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group col-md-9">
+                    <input type="phonenumber" name="phonenumber" id="" maxlength="10" placeholder="Phonenumber" required class="form-control">
+                </div>
+            </div>
+
+            <div>
+                <input type="password" name="password" required id="" placeholder="Password" minlength="6" class="form-control">
+            </div>
+            <br>
+            <div>
+                <input type="submit" name="sub"  id="" value="Submit" class="btn btn-danger">
+            </div>
+            
+            
+        </div>
+    </form>
+</center>
+</body>
+</html>
