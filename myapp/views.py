@@ -113,7 +113,7 @@ def forgotpassword(request):
             ob.quit()
             return redirect('forgotemailpassword')
         else:
-            messages.success(request,' Not exist')
+            messages.success(request,'Email Not exist SignIn First!!!')
             return redirect('welcomepage')
     else:
         messages.success(request,'Register First!!!')
